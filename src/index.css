@@ -1,2 +1,12 @@
 /* index.css */
 @import "tailwindcss";
+
+@theme inline {
+}
+
+@layer base {
+  :root {
+    --clr-blue: blue;
+    --clr-red: red;
+  }
+}
