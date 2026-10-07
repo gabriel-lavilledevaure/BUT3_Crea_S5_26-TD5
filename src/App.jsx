@@ -4,6 +4,7 @@ import Exercice3 from "./Exercices/Exercice3";
 import Exercice4 from "./Exercices/Exercice4";
 import Exercice5 from "./Exercices/Exercice5";
 import Exercice6 from "./Exercices/Exercice6";
+import Exercice7 from "./Exercices/Exercice7";
 
 function App() {
   // return <Exercice1 />;
@@ -11,7 +12,8 @@ function App() {
   // return <Exercice3 />;
   // return <Exercice4 />;
   // return <Exercice5 />;
-  return <Exercice6 />;
+  // return <Exercice6 />;
+  return <Exercice7 />;
 }
 
 export default App;
