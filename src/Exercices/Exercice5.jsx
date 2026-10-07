@@ -9,6 +9,8 @@ export default function App() {
 
   const deleteUser = (id) => {
     // TODO : garde tous les users SAUF celui qui a cet id (.filter)
+
+    setUsers((prev) => prev.filter((user) => user.id !== id));
   };
 
   const toggleUser = (id) => {
@@ -22,9 +24,25 @@ export default function App() {
     );
   };
 
+  const addUser = () => {
+    const newUser = {
+      id: crypto.randomUUID(),
+      name: "New User",
+      active: false,
+    };
+    setUsers((prev) => [...prev, newUser]);
+  };
+
   return (
     <div className="p-8">
       <h1 className="mb-4 text-xl">Exercice 5</h1>
+
+      <button
+        className="mb-4 rounded bg-green-500 px-3 py-1 text-sm text-white"
+        onClick={addUser}
+      >
+        Ajouter un utilisateur
+      </button>
 
       <ul className="space-y-2">
         {users.map((user) => (
@@ -47,7 +65,10 @@ export default function App() {
               </button>
 
               {/* TODO : ajoute onClick → deleteUser(user.id) au bouton ci-dessous */}
-              <button className="rounded bg-red-500 px-3 py-1 text-sm text-white">
+              <button
+                className="rounded bg-red-500 px-3 py-1 text-sm text-white"
+                onClick={() => deleteUser(user.id)}
+              >
                 Supprimer
               </button>
             </div>
